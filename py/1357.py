@@ -1,0 +1,23 @@
+print(
+  int(
+    str(
+      int(
+        sum(
+          map(
+            int,
+            map(
+              lambda x:x[::-1],
+              map(
+                str,
+                map(
+                  int,
+                  input().split()
+                )              
+              )
+            )
+          )
+        )
+      )
+    )[::-1]
+  )
+)

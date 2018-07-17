@@ -1,14 +1,9 @@
 
 a, b = map(int, input().split())
-
 arr = []
-
 for i in range(a):
   arr.append(int(input()))
-
-
 count = 0
-
 def f(n, m):
   global count
   
