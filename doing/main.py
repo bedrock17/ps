@@ -17,7 +17,7 @@
 # [print(chr(x), end=" ") for x in range(ord(a),ord(b)+1)]
 
 
-n=int(input())
+user_input=input()
 def f0(x):
   s = 0
   for i in range(1,len(str(x))-1):
@@ -34,16 +34,47 @@ def fn(x, n):
 
   return s
 
-# cnt = [0]*10
-# for i in range(1,n):
-#   for j in range(10):
-#     cnt[j] += str(i).count(str(j))
-#   print(i, cnt)
+cnt = [0]*10
+for i in range(1,int(user_input)+1):
+  for j in range(10):
+    cnt[j] += str(i).count(str(j))
+  print(i, cnt)
+print(cnt)
 
-print(f0(n), end=" ")
-for i in range(1, 10):
-  print(fn(n, i), end=" ")
+count = [0]*10
+tmpcount = count[:]
+for idx, num in enumerate(user_input):
+  numint = int(num)
+  
+  x = numint * (10**(len(user_input) - 1 - idx))
+  
+  if x!=0 and x>9:
+    # print(x)
+    # print(f0(x), end=" ")
+    count[0]+=f0(x)
+    for i in range(1, 10):
+      # print(fn(x, i), end=" ")
+      count[i]+=fn(x,i)
+    # print()
+  elif len(user_input) == idx+1:
+    for i in range(0, x):
+      count[i]+=1
 
+  for j in range(10):
+      count[j] += str(x).count(str(j))
+
+  for jdx, v in enumerate(tmpcount):
+    count[jdx]+=v*x
+    
+
+  tmpcount[numint]+=1
+  
+  
+  # print(tmpcount)
+
+# if int(user_input) < 10:
+count[0] -= len(user_input)-1
+print(count)
 # for i in inp,ut().split():
 #   arr[int(i)-1]+=1
 # [print(x, end=" ") for x in arr]
