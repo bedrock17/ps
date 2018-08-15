@@ -1,6 +1,9 @@
 {
     "python.linting.pylintEnabled": false,
     "files.associations": {
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "ostream": "cpp",
+        "ios": "cpp",
+        "xiosbase": "cpp"
     }
 }

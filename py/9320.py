@@ -75,8 +75,8 @@ def find():
     return
   bFind = False
   inp1 = inp.split()
-  ns = inp1[:4]
-  val = int(inp1[4])
+  ns = inp1[:]
+  val = 24
   
   for i in opers: 
     if not bFind:
@@ -87,10 +87,12 @@ def find():
               find2([i, j, k], ns, val)
   
   if bFind:
-    print(inp + " OK!")
+    print("YES")
   else:
-    print(inp + " NO!")
+    print("NO")
 
 
-while gCon:
+count = int(input())
+while count > 0:
   find()  
+  count-=1
